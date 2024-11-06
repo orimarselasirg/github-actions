@@ -1,0 +1,21 @@
+name: Lint Check
+run-name: ${{ github.actor }} ejecutando lint check
+on: [push, pull_request]
+
+jobs:
+  lint:
+    name: Ejecutar Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Instalar dependencias
+        run: npm ci
+        
+      - name: Ejecutar ESLint
+        run: npm run lint

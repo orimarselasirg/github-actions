@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "predev": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint .",
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
