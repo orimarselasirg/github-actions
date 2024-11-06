@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
           
       - name: Instalar dependencias
-        run: npm ci
+        run: yarn install --frozen-lockfile
         
       - name: Ejecutar ESLint
-        run: npm run lint
+        run: yarn lint
