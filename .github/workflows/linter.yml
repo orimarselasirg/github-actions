@@ -1,6 +1,10 @@
 name: Lint Check
 run-name: ${{ github.actor }} ejecutando lint check
-on: [push, pull_request]
+on: 
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
 
 jobs:
   lint:
