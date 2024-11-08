@@ -8,11 +8,11 @@ on:
 
 jobs:
 
-  avoid_reduncy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancelar builds previos
-        uses: styfle/cancel-workflow-action@v0.10.0
+  # avoid_reduncy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Cancelar builds previos
+  #       uses: styfle/cancel-workflow-action@v0.10.0
 
   install:
     runs-on: ubuntu-latest
