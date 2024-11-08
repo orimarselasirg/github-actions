@@ -7,19 +7,40 @@ on:
     branches: [develop, main]
 
 jobs:
-  lint:
-    name: Ejecutar Linter
+
+  build:
+    name: Ejecutar Build
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          
-      - name: Instalar dependencias
-        run: yarn install --frozen-lockfile
-        
-      - name: Ejecutar ESLint
+
+  linter:
+    name: Ejecutar Linter
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Linter
         run: yarn lint
+  test:
+    name: Ejecutar Test
+    needs: [build, linter]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: yarn test
+      # - uses: actions/checkout@v4
+      
+      # - name: Configurar Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20'
+          
+      # - name: Instalar dependencias
+      #   run: yarn install --frozen-lockfile
+        
+      # - name: Ejecutar ESLint
+      #   run: yarn lint
+
+      # - name: Ejecutar Test
+      #   run: yarn test
