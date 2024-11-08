@@ -17,15 +17,15 @@ jobs:
 
   linter:
     name: Ejecutar Linter
-    needs: [build]
     runs-on: ubuntu-latest
+    needs: [build]
     steps:
       - name: Linter
         run: yarn lint
   test:
     name: Ejecutar Test
-    needs: [build, linter]
     runs-on: ubuntu-latest
+    needs: [build, linter]
     steps:
       - name: Test
         run: yarn test
