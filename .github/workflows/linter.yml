@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancelar builds previos
-        uses: styfle/cancel-workflow-action@v1.2.4
+        uses: viveklak/cancel-workflows@v1.2.4
 
   install:
     runs-on: ubuntu-latest
